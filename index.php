@@ -15,9 +15,14 @@ if (isset($_SESSION['nick'])) {
     if (file_exists($filename)) {
         // written, hence login
     } else {
-        $log[]='going setup';
+        $log[] = 'going setup';
         require_once 'inc/setup.php';
     }
 }
+// debug the log
+echo '<div id="log"><h5>Log:</h5><ol>';
+foreach($log as $key => $val)
+    echo '<li>'. $val .'</li>';
+echo '</ol></div>';
 echo '</body></html>';
 
