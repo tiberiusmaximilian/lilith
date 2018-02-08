@@ -4,3 +4,28 @@ body {
 #log {
 	background-color: #dedeff;
 }
+form {
+	margin-bottom: 0px;
+}
+.centerbox {
+	margin: auto;
+	margin-top: 25%;
+    width: 50%;
+    border: thin solid red;
+    padding: 7px;
+}
+.centerbox .col2 {
+	width: 100%;
+}
+.centerbox input {
+	width: 100%;
+}
+.centerbox button {
+	margin: auto;
+	display: block;
+}
+
+table, td, th{
+    border: thin dashed gray;
+    border-collapse: collapse;
+}

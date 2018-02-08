@@ -5,14 +5,14 @@ function removeDir($name){
    $handle=opendir($name);
    /* This is the correct way to loop over the directory. */
    while (false !== ($entry = readdir($handle))) {
-       if($entry[0]=='.')
+       $entry2=$name.'/'.$entry;
+       if($entry[0]=='.' && is_dir($entry2))
            continue;
-       $entry=$name.'/'.$entry;
-       echo $entry.' ';
-       if(is_dir($entry)){
-           removeDir($entry);
+       echo 'removing '.$entry2.' <br />';
+       if(is_dir($entry2)){
+           removeDir($entry2);
        }else {
-           unlink($entry);
+           unlink($entry2);
        }
        
    }
@@ -23,6 +23,7 @@ function removeDir($name){
 function makeData()
 {
     global $dataDir;
+    global $log;
     echo '<ol>';
     echo '<li>'.$dataDir.' directory</li>';
     if (is_dir($dataDir)) {
@@ -42,7 +43,9 @@ function makeData()
     } else {
         echo '<li>function for creating pipe does not exist - install the posix extensions</li>';
     }
-    
+    file_put_contents($dataDir.'/.htaccess', 'deny from all');
+    echo '<li>added .htaccess</li>';
+    $log[]='adding sql database';
     echo '</ol>';
 }
 

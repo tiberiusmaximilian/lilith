@@ -13,9 +13,11 @@ if (isset($_SESSION['nick'])) {
     $log[] = 'no nick in session';
     // login?
     $adminFile = 'data/admin.txt';
-    if (file_exists($filename)) {
+    if (file_exists($adminFile)) {
         // written, hence login
         $log[] = 'got a designated admin';
+        require_once 'inc/login.php';
+        doLogin();
     } else {
         $log[] = 'going setup';
         require_once 'inc/setup.php';
