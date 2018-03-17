@@ -1,15 +1,13 @@
 body {
 	background-color: linen;
 }
-#log {
-	background-color: #dedeff;
-}
+
 form {
 	margin-bottom: 0px;
 }
 .centerbox {
 	margin: auto;
-	margin-top: 25%;
+	
     width: 50%;
     border: thin solid red;
     padding: 7px;

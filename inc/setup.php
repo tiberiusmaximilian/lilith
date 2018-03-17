@@ -33,7 +33,9 @@ function makeData()
     } 
     
     {
-        mkdir($dataDir, 0777, false) || die('no directory');
+        mkdir($dataDir, 0777, false);
+        if(!is_dir($dataDir))
+            die('no directory');
         echo '<li>data directory created</li>';
     }
     if (function_exists('posix_mkfifo')) {

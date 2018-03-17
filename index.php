@@ -25,11 +25,12 @@ if (isset($_SESSION['nick'])) {
     }
 }
 {
-    // debug the log
+    /*debug the log
     echo '<div id="log"><h5>Log:</h5><ol>';
     foreach ($log as $key => $val)
         echo '<li>' . $val . '</li>';
     echo '</ol></div>';
+    */
 }
 echo '</body></html>';
 
